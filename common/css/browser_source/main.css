@@ -1,0 +1,266 @@
+body {
+	background-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
+	font-family: STEELFISH;
+}
+
+#leftTeam, #rightTeam {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+
+
+#imgL1, #imgL2, #imgL3, #imgL4, #imgL5{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	visibility: visible;
+}
+
+#imgR1, #imgR2, #imgR3, #imgR4, #imgR5{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	visibility: visible;
+}
+
+#leftScoreBox {
+left: 1561px;
+}
+
+#rightScoreBox {
+left: 1746px;
+}
+
+#underBox {
+left: 1387px;
+}
+
+#leftScoreBox, #rightScoreBox, #underBox{
+top: 872px;
+width: 55px;
+height: 59px;
+line-height: 59px;
+text-align: center;
+}
+
+#qtrBox {
+top: 952px;
+left: 1507px;
+width: 33px;
+height: 31px;
+line-height: 31px;
+text-align: center;
+}
+
+#super {
+	font-family: MADE TOMMY;
+	vertical-align: super;
+	font-size: 15px;
+}
+
+span {
+-webkit-font-smoothing: antialiased;
+}
+
+.contentBox {
+position: absolute;
+/* background-color: blue;
+opacity: 0.7; */
+} 
+
+/* orig location */
+/* #player1Score,
+#player2Score, #underValue {
+	font-size: 49pt;
+	font-weight: bold;
+	vertical-align: middle;
+} */
+
+#quarterValue {
+	font-family: MADE TOMMY;
+	font-size: 21pt;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+
+
+.blinking-animation{
+	animation: blink 2s linear;
+}
+
+@keyframes blink {
+	0%, 25%, 50%, 75% {
+        opacity: 0;
+	}
+	12.5%, 37.5%, 62.5% {
+		opacity: 1;
+	}
+}
+
+/* for animation of scoreboard */
+
+.upperContainer {
+	position: absolute;
+    top: 870px;
+    left: 1456px;
+    width: 182px;
+    height: 68px;
+    overflow: hidden;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    visibility: visible;
+}
+
+.upper {
+    z-index: 1;
+    position: absolute;
+    object-fit: cover;
+    transform: translateY(100%);
+}
+
+.upper.animate {
+    animation: moveImage 0.6s ease-in-out;
+}
+
+
+.sentScore1{
+    z-index: 0;
+    font-family: Steelfish;
+    font-size: 46pt;
+    left: 105px;
+    position: absolute;
+    object-fit: cover;
+    transform: translateY(100%);
+    }
+
+.sentScore1.animate {
+    animation: moveImage 0.6s ease-in-out;
+}
+
+.score1 {
+	width: 55px;
+	height: 59px;
+	line-height: 59px;
+    z-index: 0;
+    font-family: STEELFISH;
+    font-size: 46pt;
+    position: absolute;
+    object-fit: cover;
+    visibility: visible;
+    /* background-color: brown; */
+}
+
+#player1Score {
+    left: 105px;
+    text-align: center;
+}
+
+.score1.animate {
+    animation: moveUp 0.5s ease-in-out;
+}
+
+@keyframes moveImage {
+0% {
+    opacity: 0;
+    /* scale: 2; */
+    transform: translate(0, 0) scale(2);
+}
+
+50% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+50%, 75% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+100% {
+    transform: translateY(-100%);
+}
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.lowerContainer {
+	position: absolute;
+    top: 870px;
+    left: 1640px;
+    width: 181PX;
+    height: 68px;
+    overflow: hidden;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    visibility: visible;
+}
+
+.lower {
+    z-index: 1;
+    position: absolute;
+    object-fit: cover;
+    transform: translateY(100%);
+}
+
+.lower.animate {
+    animation: moveImage 0.6s ease-in-out;
+}
+
+
+.sentScore2{
+    z-index: 0;
+    font-family: STEELFISH;
+    font-size: 46pt;
+    left: 105px;
+    position: absolute;
+    object-fit: cover;
+    transform: translateY(100%);
+    }
+
+.sentScore2.animate {
+    animation: moveImage 0.6s ease-in-out;
+}
+
+.score2 {
+	width: 55px;
+	height: 59px;
+	line-height: 59px;
+	text-align: center;
+    z-index: 0;
+    font-family: STEELFISH;
+    font-size: 49pt;
+    position:absolute;
+    object-fit: cover;
+    visibility: visible;
+    /* background-color: BLUE; */
+}
+
+#player2Score {
+    left: 106px;
+    text-align: center;
+}
+#player1Score,
+#player2Score, #underValue {
+	font-size: 49pt;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.score2.animate {
+    animation: moveUp 0.5s ease-in-out;
+}

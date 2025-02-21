@@ -1,0 +1,207 @@
+<!doctype html>
+<!-- 
+    Scoreboard modified by Mark Joseph Orino
+    Based on G4ScoreBoard addon for OBS version 1.6.0 Copyright 2022 Norman Gholson IV 
+-->
+
+<html>
+    <head>
+        <link rel="stylesheet" href="./common/css/control_panel/yami.css" />
+        <link rel="stylesheet" href="./common/css/control_panel/required.css" />
+        <script>
+            //---------------------------------------------------------------------------------------------
+                var versionNum = "1.2";
+              //---------------------------------------------------------------------------------------------
+        </script>
+        <script src="./common/js/jquery.js"></script>
+        <script src="./common/js/control_panel.js"></script>
+        <script src="hotkeys.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    </head>
+    <body>
+        <div id="mainDiv">
+            <center>
+                <div id="topPlayerGameInfo" class="obs28">
+                    <p style="font-size:1px">&nbsp;</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Under Category:&nbsp;
+                    <select name="under" id="underDiv" class="obs28" onchange="teamName()">
+                        <option value="" default>Select Under</option>
+                        <option value="13U">13U</option>
+                        <option value="15U">15U</option>
+                        <option value="17U">17U</option>
+                        <option value="19U">19U</option>
+                        <option value="21U">21U</option>
+                    </select>
+                    <p style="font-size:1px">&nbsp;</p>
+                    Player/Team 1 Name:&nbsp;
+                    <select name="p1Team" id="p1TeamDiv" class="obs28" onchange="teamName()" placeholder="Select Team">
+                        <option value="" default>Select Team</option>
+                        <option value="AAS">AA Sports</option>
+                        <option value="ANTA">Anita</option>
+                        <option value="AZKL">Askalz</option>
+                        <option value="BGKG">Batang Kallering</option>
+                        <option value="BMB">Batang Malvar</option>
+                        <option value="BRSC">BRSCI</option>
+                        <option value="CBBC">CBBC</option>
+                        <option value="CBAS">CBBC-All Star</option>
+                        <option value="CBLI">Coach Bali</option>
+                        <option value="CCBC">CCBC</option>
+                        <option value="CHK">Coach K</option>
+                        <option value="DARC">Delfin Albano Rea Camp</option>
+                        <option value="DRM">Dream Hoopers</option>
+                        <option value="ECC">ECC</option>
+                        <option value="ELC">EL Cubo</option>
+                        <option value="EDB">Extreme D</option>
+                        <option value="ILGN">Ilagan</option>
+                        <option value="JEC">Jec Arts</option>
+                        <option value="JKH">JK Hardware</option>
+                        <option value="JOAN">Joan</option>
+                        <option value="JTGZ">Wolfax</option>
+                        <option value="KRRO">Karuro</option>
+                        <option value="LDP">Lhianz Digital Printing</option>
+                        <option value="LUNA">Luna</option>
+                        <option value="LNB">Luna Bella</option>
+                        <option value="MPS">MPs</option>
+                        <option value="NRPS">Net Rippers</option>
+                        <option value="OPSI">One Piece San Isidro</option>
+                        <option value="SPH">San Pablo - Doc Style</option>
+                        <option value="SMB">San Mateo</option>
+                        <option value="SHFT">Shift</option>
+                        <option value="SSJW">SSJW</option>
+                        <option value="JVP">Team JVP</option>
+                        <option value="UNDG">Underdog</option>
+                        <option value="UVSL">Universal Basketball Camp</option>
+                        <option value="YOLO">Yolo</option>
+                    </select>
+                    <p style="font-size:1px">&nbsp;</p>
+                    Player/Team 2 Name:&nbsp;
+                    <select name="p2Team" id="p2TeamDiv" class="obs28" onchange="teamName()">
+                        <option value="" default>Select Team</option>
+                        <option value="AAS">AA Sports</option>
+                        <option value="ANTA">Anita</option>
+                        <option value="AZKL">Askalz</option>
+                        <option value="BGKG">Batang Kallering</option>
+                        <option value="BMB">Batang Malvar</option>
+                        <option value="BRSC">BRSCI</option>
+                        <option value="CBBC">CBBC</option>
+                        <option value="CBAS">CBBC-All Star</option>
+                        <option value="CBLI">Coach Bali</option>
+                        <option value="CCBC">CCBC</option>
+                        <option value="CHK">Coach K</option>
+                        <option value="DARC">Delfin Albano Rea Camp</option>
+                        <option value="DRM">Dream Hoopers</option>
+                        <option value="ECC">ECC</option>
+                        <option value="ELC">EL Cubo</option>
+                        <option value="EDB">Extreme D</option>
+                        <option value="ILGN">Ilagan</option>
+                        <option value="JEC">Jec Arts</option>
+                        <option value="JKH">JK Hardware</option>
+                        <option value="JOAN">Joan</option>
+                        <option value="JTGZ">Wolfax</option>
+                        <option value="KRRO">Karuro</option>
+                        <option value="LDP">Lhianz Digital Printing</option>
+                        <option value="LUNA">Luna</option>
+                        <option value="LNB">Luna Bella</option>
+                        <option value="MPS">MPs</option>
+                        <option value="NRPS">Net Rippers</option>
+                        <option value="OPSI">One Piece San Isidro</option>
+                        <option value="SPH">San Pablo - Doc Style</option>
+                        <option value="SMB">San Mateo</option>
+                        <option value="SHFT">Shift</option>
+                        <option value="SSJW">SSJW</option>
+                        <option value="JVP">Team JVP</option>
+                        <option value="UNDG">Underdog</option>
+                        <option value="UVSL">Universal Basketball Camp</option>
+                        <option value="YOLO">Yolo</option>
+                    </select>
+                </div>
+
+                <p style="font-size:12px">&nbsp;</p>
+                <div class="hover obs28" id="sendPNames" onclick="clearTeams()">Clear</div>
+                <div class="hover obs28" id="swapTeams" onclick="swapTeams()">Swap</div>                
+                <p style="font-size:15px">&nbsp;</p>
+                <hr>
+                <div class="hover obs28" id="sendP1Score" onclick="postScore('add','1')">P1 +1 Score</div>
+                <div class="hover obs28" id="sendP2Score" onclick="postScore('add','2')">P2 +1 Score</div>
+                <p style="font-size:9.25pt">&nbsp;</p>
+                <div class="hover obs28" id="sendP1ScoreSub" onclick="postScore('sub','1')">P1 -1 Score</div>
+                <div class="hover obs28" id="sendP2ScoreSub" onclick="postScore('sub','2')">P2 -1 Score</div>
+                <p style="font-size:11.25pt">&nbsp;</p>
+                <hr>
+                <div class="hover obs28" id="sendP1FoulAdd" onclick="postFoul('add','1')">P1 +1 TO</div>
+                <div class="hover obs28" id="sendP2FoulAdd" onclick="postFoul('add','2')">P2 +1 TO</div>
+                <p style="font-size:9.25pt">&nbsp;</p>
+                <div class="hover obs28" id="sendP1FoulSub" onclick="postFoul('sub','1')">P1 -1 TO</div>
+                <div class="hover obs28" id="sendP2FoulSub" onclick="postFoul('sub','2')">P2 -1 TO</div>
+                <p style="font-size:11.25pt">&nbsp;</p>
+                <hr>
+                <div class="hover obs28" id="resetBtn" onclick="resetScore()">Reset Scores</div>
+			    <p style="font-size:0.1pt">&nbsp;</p>
+                <hr>
+                <div class="hover obs28" id="qtrSub" onclick="postQtr('sub')">-</div>
+                <div class="hover obs28" id="qtrAdd" onclick="postQtr('add')">+</div>
+                <div class="obs28" id="qtr">Quarter 1</div>
+                <hr>
+                <div class="hover obs28" id="copyBtn" onclick="copyText(this)">Season 6</div>
+			    <p style="font-size:0.1pt">&nbsp;</p>
+                <hr>
+                <textarea name="schedule" id="schedule" placeholder="Enter schedule here..."></textarea>
+                <p style="font-size:2px">&nbsp;</p>
+                <div class="hover obs28" id="schedule-button" onclick="getSchedule()">Enter</div>
+                <p style="font-size:2px">&nbsp;</p>
+                <div class="hover obs28" id="prevgame" onclick="prevGame()">Prev</div>
+                <div class="hover obs28" id="nextgame" onclick="nextGame()">Next</div>    
+            </center>
+ 
+            <p style="font-size:2px">&nbsp;</p>
+            <text style="font-size:7pt; color:#818181; position:fixed; top:11px;">joSeph ScoreBoardv<text
+				id="verNum"></text></text>
+        </div>
+        <script src="./common/js/control_panel_post.js"></script>
+    
+        <script>
+            //////////////////// HotKey scripts
+    
+            //Reload the hotjeys.js file updated by the LUA script
+            function updateHotkeys() {
+                var src;
+                src = 'hotkeys.js';
+                $('script[src="' + src + '"]').remove();
+                var head = document.getElementsByTagName('head')[0];
+                var script = document.createElement('script');
+                script.src = src;
+                head.appendChild(script);
+            }
+    
+            //Toggle the switches if a hotkey is pressed
+            function checkHotkeys() {
+    
+                if (hotkeyP1ScoreUp != hotkeyP1ScoreUpOld) { postScore('add', '1'); hotkeyP1ScoreUpOld = hotkeyP1ScoreUp; }
+                if (hotkeyP2ScoreUp != hotkeyP2ScoreUpOld) { postScore('add', '2'); hotkeyP2ScoreUpOld = hotkeyP2ScoreUp; }
+                if (hotkeyP1ScoreDown != hotkeyP1ScoreDownOld) { postScore('sub', '1'); hotkeyP1ScoreDownOld = hotkeyP1ScoreDown; }
+                if (hotkeyP2ScoreDown != hotkeyP2ScoreDownOld) { postScore('sub', '2'); hotkeyP2ScoreDownOld = hotkeyP2ScoreDown; }
+                if (hotkeyScoreReset != hotkeyScoreResetOld) { resetScore(); hotkeyScoreResetOld = hotkeyScoreReset; }
+                if (hotkeyQtrAdd != hotkeyQtrAddOld) { postQtr('add'); hotkeyQtrAddOld = hotkeyQtrAdd; }
+                if (hotkeyQtrSub != hotkeyQtrSubOld) { postQtr('sub'); hotkeyQtrSubOld = hotkeyQtrSub; }
+                if (hotkeyP1FoulAdd != hotkeyP1FoulAddOld) { postFoul('add', '1'); hotkeyP1FoulAddOld = hotkeyP1FoulAdd; }
+                if (hotkeyP1FoulSub != hotkeyP1FoulSubOld) { postFoul('sub', '1'); hotkeyP1FoulSubOld = hotkeyP1FoulSub; }
+                if (hotkeyP2FoulAdd != hotkeyP2FoulAddOld) { postFoul('add', '2'); hotkeyP2FoulAddOld = hotkeyP2FoulAdd; }
+                if (hotkeyP2FoulSub != hotkeyP2FoulSubOld) { postFoul('sub', '2'); hotkeyP2FoulSubOld = hotkeyP2FoulSub; }
+                
+            }
+    
+            function refreshData() {
+                var x;
+                x = 0.05; // Refresh time multiplier
+                checkHotkeys();
+                updateHotkeys();
+                setTimeout(refreshData, x * 1000);
+            }
+    
+            //////////////////// end of HotKey scripts
+            refreshData();
+        </script>
+        </div>
+
+    </body>
+</html>

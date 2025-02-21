@@ -1,0 +1,187 @@
+body{
+	font-family:tahoma;
+	background: #2b2e38;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	margin-top:1px;
+}
+
+div {
+	color:lightgrey;
+	min-height: 30px;
+	border: 0px solid #000;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	font-size:9pt;
+}
+
+#mainDiv {
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	display: flex;
+	min-height: 95%;
+	border: 0px solid #000;
+	border-radius: 0px;
+	min-width:50px;
+	justify-content: center; /* align horizontal */
+	font-size:8pt;
+	padding:20px;
+	padding-right:60px;
+	padding-left:60px;
+	padding-top:2px;
+}
+
+#p1TeamDiv, #p2TeamDiv, #underDiv {
+	cursor: pointer;
+	width:116px;
+	/* position:absolute; */
+	/* right:50%; */
+	padding-left:10px;
+	padding-right:10px;
+	background-color: #2b2e38;
+	border-radius:5px;
+	margin-right:30px;
+	font-family:tahoma;
+	font-size:8pt;
+	color: lightgrey;
+}
+
+#sendPNames, #nextgame{
+	cursor: pointer;
+	width:125px;
+	position:absolute;
+	left:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-left:2px;
+	font-size:8pt;
+}
+
+#swapTeams, #prevgame{
+	cursor: pointer;
+	min-width:85px;
+	width:125px;
+	position:absolute;
+	right:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right:2px;
+	font-size:8pt;
+}
+
+#sendP1Score, #sendP1ScoreSub{
+	cursor: pointer;
+	min-width:85px;
+	width:125px;
+	position:absolute;
+	right:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right:2px;
+	font-size:8pt;
+}
+
+#sendP2Score, #sendP2ScoreSub{
+	cursor: pointer;
+	width:125px;
+	position:absolute;
+	left:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-left:2px;
+	font-size:8pt;
+}
+
+#sendP1FoulAdd, #sendP1FoulSub{
+	cursor: pointer;
+	min-width:85px;
+	width:125px;
+	position:absolute;
+	right:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right:2px;
+	font-size:8pt;
+}
+
+#sendP2FoulAdd, #sendP2FoulSub{
+	cursor: pointer;
+	width:125px;
+	position:absolute;
+	left:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-left:2px;
+	font-size:8pt;
+}
+#resetBtn {
+	cursor: pointer;
+	width:294px;
+	font-size:9pt;
+}
+
+#qtrAdd{
+	cursor: pointer;
+	width:80px;
+	position:absolute;
+	left:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-left:46px;
+	font-size:8pt;
+}	  
+
+#qtrSub{
+	cursor: pointer;
+	width:80px;
+	position:absolute;
+	right:50%;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right:47px;
+	font-size:8pt;
+}
+
+#qtr{
+	cursor: default;
+	width:80px;
+	position:relative;
+	font-size:8pt;
+}
+
+#topPlayerGameInfo {
+	min-width:85px;
+	width:295px;
+	height:60px;
+	position:relative;
+	top:33px;
+	display:block;
+	font-size:8pt;
+	padding-top:5px;
+}
+
+text {
+	cursor: default;
+}
+
+input.smallSize {
+	height: 11px;
+	width: 11px;
+	color:red;
+}
+
+input {
+	border-radius:3px;
+	border:0px;
+}
+
+#schedule {
+	width: 100%;
+	box-sizing: border-box;
+	resize: vertical;
+}

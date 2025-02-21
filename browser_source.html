@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- 
+    Scoreboard modified by Mark Joseph Orino
+    Based on G4ScoreBoard addon for OBS version 1.6.0 Copyright 2022 Norman Gholson IV 
+-->
+
+<html>
+
+<head>
+	<script src="./common/js/jquery.js"></script>
+	<script src="./common/js/odometer.js"></script>
+	<script src="./common/js/browser_source.js"></script>
+	<link rel="stylesheet" href="./common/css/browser_source/main.css" />
+	<link rel="stylesheet" href="./common/css/browser_source/odometer.css" />
+</head>
+<style>
+	body{
+		background-image: url("./images/scoreboardv4-finals.png");
+		background-repeat:no-repeat;
+	}
+</style>
+<body>
+	<img src="" alt="" id="leftTeam">
+	<img src="" alt="" id="rightTeam">
+	<div class="leftTeamFoul">
+		<img src="./images/LEFT1.PNG" alt="" id="imgL1">
+		<img src="./images/LEFT2.PNG" alt="" id="imgL2">
+		<img src="./images/LEFT3.PNG" alt="" id="imgL3">
+		<img src="./images/LEFT4.PNG" alt="" id="imgL4">
+		<img src="./images/LEFT5.PNG" alt="" id="imgL5">
+	</div>
+	<div class="rightTeamFoul">
+		<img src="./images/RIGHT1.PNG" alt="" id="imgR1">
+		<img src="./images/RIGHT2.PNG" alt="" id="imgR2">
+		<img src="./images/RIGHT3.PNG" alt="" id="imgR3">
+		<img src="./images/RIGHT4.PNG" alt="" id="imgR4">
+		<img src="./images/RIGHT5.PNG" alt="" id="imgR5">
+	</div>
+	<!-- <div class="contentBox" id="leftScoreBox">
+		<span class="playerScoreText" id="player1Score" style="color: black;">0</span>
+	</div>
+	<div class="contentBox" id="rightScoreBox">
+		<span class="playerScoreText" id="player2Score" style="color: black;">199</span>
+	</div> -->
+	<div class="contentBox" id="qtrBox">
+		<!-- <span class="qtrText" id="quarterValue" style="color: white;">FIRST QTR</span> -->
+		<!-- below is for qtr with superscipt design -->
+		<span class="qtrText" id="quarterValue" style="color: white;">1</span><span id="super" style="color: white;">st</span>
+	</div>
+	<div class="contentBox" id="underBox">
+		<!-- <span class="qtrText" id="quarterValue" style="color: white;">FIRST QTR</span> -->
+		<!-- below is for qtr with superscipt design -->
+		<span class="underText" id="underValue" style="color: white;"></span>
+	</div>
+	<div class="upperContainer" id="uc">
+		<img src="./images/RS8.JPG" class="upper">
+		<span class="sentScore1" id="symbol1" style="color: black;">+2</span>
+		<span class="score1" id="player1Score" style="color: black;">0</span>
+	</div>
+	<div class="lowerContainer">
+		<img src="./images/RS8.jpg" class="lower">
+		<span class="sentScore2" id="symbol2" style="color: black;">+2</span>
+		<span class="score2" id="player2Score" style="color: black;">0</span>
+	</div>
+	<script src="./common/js/browser_source_post.js"></script>
+</body>
+
+</html>

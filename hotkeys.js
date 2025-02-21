@@ -1,0 +1,11 @@
+hotkeyP1ScoreUp = 0;
+hotkeyP1ScoreDown = 0;
+hotkeyP2ScoreUp = 0;
+hotkeyP2ScoreDown = 0;
+hotkeyScoreReset = 0;
+hotkeyQtrAdd = 0;
+hotkeyQtrSub = 0;
+hotkeyP1FoulAdd = 0;
+hotkeyP1FoulSub = 0;
+hotkeyP2FoulAdd = 0;
+hotkeyP2FoulSub = 0;

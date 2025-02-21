@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- 
+    Scoreboard modified by Mark Joseph Orino
+    Based on G4ScoreBoard addon for OBS version 1.6.0 Copyright 2022 Norman Gholson IV 
+-->
+
+<html>
+
+<head>
+	<script src="./common/js/jquery.js"></script>
+	<script src="./common/js/odometer.js"></script>
+	<script src="./common/js/browser_source.js"></script>
+	<link rel="stylesheet" href="./common/css/browser_source/waiting screen.css" />
+	<link rel="stylesheet" href="./common/css/browser_source/odometer.css" />
+</head>
+<style>
+	body{
+		background-image: url("./images/WS-BG.PNG");
+		background-repeat:no-repeat;
+	}
+</style>
+<body>
+	<img src="" alt="" id="leftTeamWS">
+	<img src="" alt="" id="rightTeamWS">
+	<div class="contentBox" id="underBox">
+		<span class="underText" id="underValue"></span>
+	</div>
+	<div class="contentBox" id="leftScoreBox">
+		<span class="playerScoreText" id="player1Score">0</span>
+	</div>
+	<div class="contentBox" id="rightScoreBox">
+		<span class="playerScoreText" id="player2Score">0</span>
+	</div>
+	<div class="contentBox" id="qtrTxtBox">
+		<span class="qtrWord" id="quarterWordValue">QTR</span>
+	</div>
+	<div class="contentBox" id="qtrBox">
+		<span class="qtrText" id="quarterValue">1</span>
+	</div>
+	<script src="./common/js/browser_source_postws.js"></script>
+</body>
+
+</html>

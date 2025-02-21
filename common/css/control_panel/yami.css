@@ -1,0 +1,25 @@
+	.obs28 {
+		background: #3c404b;
+		border:0px;
+		color:lightgrey;
+		}
+	#mainDiv {
+		background: #2b2e38;
+		}
+	
+	hr {
+		border-bottom:0px;
+		border-top: 1px solid steelblue;
+		border-left: 0px;
+		border-right: 0px;
+		}
+	
+	.hover:hover {
+		background:#4f535e;
+	}
+		
+	
+		
+		
+		
+		
