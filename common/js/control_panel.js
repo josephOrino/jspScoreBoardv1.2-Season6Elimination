@@ -5,6 +5,15 @@ var team1 = "";
 var team2 = "";
 let scheduleArray;
 let gameCount = 0;
+let finalScoreText = "";
+let p1Scores = 0;
+let p2Scores = 0;
+
+let prevScore1 = 0;
+let prevScore2 = 0;
+
+let tempScore1 = 0;
+let tempScore2 = 0;
 //  Scoreboard modified by Mark Joseph Orino
 //  Based on G4ScoreBoard addon for OBS version 1.6.0 Copyright 2022 Norman Gholson IV
 function teamName() {
@@ -45,8 +54,10 @@ function teamName() {
 	const p2TeamName = p2Team.options[p2Team.selectedIndex].text; // Get the text
 	const underCategory = document.getElementById('underDiv').options[document.getElementById('underDiv').selectedIndex].text;
 
-	const copyText = `Season 6 | ${p1TeamName} vs ${p2TeamName} | ${underCategory}`;
+	const copyText = `Season 6 Semi-Finals | ${p1TeamName} vs ${p2TeamName} | ${underCategory}`;
 	document.getElementById('copyBtn').innerText = copyText;
+	finalScoreText = p1TeamName + " | " + p2TeamName + " | " + underCategory + " | ";
+	document.getElementById('finalScoreBtn').innerText = finalScoreText;
 }
 
 function clearTeams() {
@@ -239,6 +250,20 @@ function postQtr(opt){
 			setTimeout(rst_scr_btn, 100);
 		}
 	}
+
+	tempScore1 = p1ScoreValue - prevScore1;
+	finalScoreText += tempScore1 + " | ";
+	console.log(finalScoreText);
+
+	tempScore2 = p2ScoreValue - prevScore2;
+	finalScoreText += tempScore2 + " | ";
+	console.log(finalScoreText);
+
+
+	prevScore1 = p1ScoreValue;
+	prevScore2 = p2ScoreValue;
+
+	document.getElementById('finalScoreBtn').innerText = finalScoreText;
 }
 
 function rst_scr_btn() {
