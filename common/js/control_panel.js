@@ -14,6 +14,13 @@ let prevScore2 = 0;
 
 let tempScore1 = 0;
 let tempScore2 = 0;
+
+let p1TeamName = "";
+let p2TeamName = "";
+let underCategory = "";
+
+let p1Finals = "";
+let p2Finals = "";
 //  Scoreboard modified by Mark Joseph Orino
 //  Based on G4ScoreBoard addon for OBS version 1.6.0 Copyright 2022 Norman Gholson IV
 function teamName() {
@@ -50,14 +57,17 @@ function teamName() {
 
 	const p1Team = document.getElementById('p1TeamDiv');
 	const p2Team = document.getElementById('p2TeamDiv');
-	const p1TeamName = p1Team.options[p1Team.selectedIndex].text; // Get the text
-	const p2TeamName = p2Team.options[p2Team.selectedIndex].text; // Get the text
-	const underCategory = document.getElementById('underDiv').options[document.getElementById('underDiv').selectedIndex].text;
+	p1TeamName = p1Team.options[p1Team.selectedIndex].text; // Get the text
+	p2TeamName = p2Team.options[p2Team.selectedIndex].text; // Get the text
+	underCategory = document.getElementById('underDiv').options[document.getElementById('underDiv').selectedIndex].text;
 
-	const copyText = `Season 6 Semi-Finals | ${p1TeamName} vs ${p2TeamName} | ${underCategory}`;
+	const copyText = `Season 7 – Regular Season, ${underCategory}: ${p2TeamName} vs ${p1TeamName}`;
 	document.getElementById('copyBtn').innerText = copyText;
-	finalScoreText = p1TeamName + " | " + p2TeamName + " | " + underCategory + " | ";
-	document.getElementById('finalScoreBtn').innerText = finalScoreText;
+
+	console.log(p1Finals);
+	console.log(p2Finals);
+	// finalScoreText = p1TeamName + " | " + p2TeamName + " | " + underCategory + " | ";
+	// document.getElementById('finalScoreBtn').innerText = finalScoreText;
 }
 
 function clearTeams() {
@@ -252,17 +262,18 @@ function postQtr(opt){
 	}
 
 	tempScore1 = p1ScoreValue - prevScore1;
-	finalScoreText += tempScore1 + " | ";
-	console.log(finalScoreText);
+	p1Finals += tempScore1 + " | ";
+	console.log(p1Finals);
 
 	tempScore2 = p2ScoreValue - prevScore2;
-	finalScoreText += tempScore2 + " | ";
-	console.log(finalScoreText);
+	p2Finals += tempScore2 + " | ";
+	console.log(p2Finals);
 
 
 	prevScore1 = p1ScoreValue;
 	prevScore2 = p2ScoreValue;
 
+	finalScoreText = underCategory + " | " + p1TeamName + " | " + p1Finals + p2TeamName + " | " + p2Finals;
 	document.getElementById('finalScoreBtn').innerText = finalScoreText;
 }
 
@@ -283,6 +294,7 @@ function rst_scr_btn() {
 function resetScore() {
 	if (confirm("Click OK to confirm score reset")) {
 		document.getElementById("qtr").innerHTML = "Quarter 1";
+		document.getElementById('finalScoreBtn').innerText = "This is for final score layout.";
 		prevScore1 = 0;
 		prevScore2 = 0;
 		tempScore1 = 0;
@@ -292,6 +304,9 @@ function resetScore() {
 		qtrValue = 1;
 		foulValueL = 5;
 		foulValueR = 5;
+		p1Finals = "";
+		p2Finals = "";
+		finalScoreText = "";
 		bc.postMessage({ foul: "reset"});
 		bc.postMessage({ player: '1', score: p1ScoreValue });
 		bc.postMessage({ player: '2', score: p2ScoreValue });
