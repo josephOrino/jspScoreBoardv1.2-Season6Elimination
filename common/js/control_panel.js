@@ -283,6 +283,10 @@ function rst_scr_btn() {
 function resetScore() {
 	if (confirm("Click OK to confirm score reset")) {
 		document.getElementById("qtr").innerHTML = "Quarter 1";
+		prevScore1 = 0;
+		prevScore2 = 0;
+		tempScore1 = 0;
+		tempScore2 = 0;
 		p1ScoreValue = 0;
 		p2ScoreValue = 0;
 		qtrValue = 1;
